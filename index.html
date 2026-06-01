@@ -1,26 +1,182 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vSmaugv | Minecraft Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONYX Studio | vSmaugv</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#090909;
+    color:white;
+}
+
+header{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:
+    radial-gradient(circle at center,#6d28d922 0%,transparent 60%);
+}
+
+.hero h1{
+    font-size:5rem;
+    letter-spacing:8px;
+}
+
+.hero h1 span{
+    color:#8b5cf6;
+}
+
+.hero p{
+    margin-top:20px;
+    color:#b5b5b5;
+    font-size:1.2rem;
+}
+
+.hero a{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 28px;
+    background:#8b5cf6;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.hero a:hover{
+    transform:translateY(-3px);
+}
+
+section{
+    padding:80px 10%;
+}
+
+.section-title{
+    font-size:2.5rem;
+    margin-bottom:40px;
+    color:#8b5cf6;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    padding:25px;
+    border:1px solid #222;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    border-color:#8b5cf6;
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#b5b5b5;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid #222;
+    color:#888;
+}
+</style>
+
 </head>
+
 <body>
-    <h1>vSmaugv</h1>
-    <h2>Minecraft Server Developer</h2>
 
-    <p>Bienvenido a mi portfolio.</p>
+<header>
+<div class="hero">
+    <h1><span>ONYX</span> STUDIO</h1>
+    <p>
+        Desarrollo y configuración profesional de servidores Minecraft
+    </p>
+    <a href="#services">Explorar</a>
+</div>
+</header>
 
-    <h3>Servicios</h3>
-    <ul>
-        <li>MythicMobs</li>
-        <li>DeluxeMenus</li>
-        <li>LuckPerms</li>
-        <li>Economía</li>
-        <li>Crates</li>
-        <li>Texture Packs</li>
-    </ul>
+<section id="services">
+    <h2 class="section-title">Servicios</h2>
 
-    <p>Discord: vSmaugv</p>
+```
+<div class="cards">
+
+    <div class="card">
+        <h3>⚔️ MythicMobs</h3>
+        <p>Bosses, habilidades, eventos y sistemas RPG avanzados.</p>
+    </div>
+
+    <div class="card">
+        <h3>💎 Economía</h3>
+        <p>Tiendas, monedas, progresión y sistemas personalizados.</p>
+    </div>
+
+    <div class="card">
+        <h3>📦 Crates</h3>
+        <p>Crates únicas con recompensas y animaciones.</p>
+    </div>
+
+    <div class="card">
+        <h3>🎨 Texture Packs</h3>
+        <p>Texturas, sonidos e identidad visual para servidores.</p>
+    </div>
+
+    <div class="card">
+        <h3>🖥️ Menús</h3>
+        <p>Interfaces profesionales mediante DeluxeMenus.</p>
+    </div>
+
+    <div class="card">
+        <h3>🛠️ Optimización</h3>
+        <p>Configuración y mejora del rendimiento del servidor.</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section>
+    <h2 class="section-title">Sobre mí</h2>
+
+```
+<p style="color:#b5b5b5;font-size:1.1rem;max-width:800px;">
+    Soy vSmaugv, especializado en la creación de experiencias
+    personalizadas para servidores Minecraft. Mi objetivo es
+    transformar ideas en sistemas únicos mediante configuración,
+    diseño y desarrollo avanzado de plugins.
+</p>
+```
+
+</section>
+
+<footer>
+    ONYX Studio © 2026 | vSmaugv
+</footer>
+
 </body>
 </html>
