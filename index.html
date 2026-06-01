@@ -8,7 +8,7 @@
 <style>
 :root{
 --bg:#07070a;
---card:#111118;
+--card:rgba(17,17,24,.75);
 --accent:#8b5cf6;
 --cyan:#22d3ee;
 --text:#f4f4f5;
@@ -18,25 +18,38 @@
 html{scroll-behavior:smooth}
 body{
 font-family:Inter,sans-serif;
-background:radial-gradient(circle at top,#1a1033 0%,#07070a 50%);
+background:#07070a;
 color:var(--text);
 overflow-x:hidden;
 }
-#particles{
-position:fixed;inset:0;z-index:-1;
+.bg{
+position:fixed;
+inset:0;
+z-index:-2;
 background:
-radial-gradient(circle at 20% 20%, rgba(139,92,246,.18), transparent 25%),
-radial-gradient(circle at 80% 30%, rgba(34,211,238,.12), transparent 25%);
+radial-gradient(circle at 20% 20%,rgba(139,92,246,.25),transparent 25%),
+radial-gradient(circle at 80% 30%,rgba(34,211,238,.15),transparent 25%),
+#07070a;
 }
 nav{
-position:fixed;top:0;width:100%;
-backdrop-filter:blur(12px);
-background:rgba(7,7,10,.55);
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 padding:18px 8%;
-display:flex;justify-content:space-between;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(12px);
 z-index:1000;
 }
 .logo{font-weight:800;letter-spacing:3px}
+.links{display:flex;gap:20px}
+.links a{
+color:#d4d4d8;
+text-decoration:none;
+font-weight:600;
+}
 .hero{
 min-height:100vh;
 display:flex;
@@ -46,61 +59,56 @@ text-align:center;
 padding:0 20px;
 }
 .hero h1{
-font-size:clamp(3rem,8vw,7rem);
-font-weight:800;
+font-size:clamp(4rem,10vw,8rem);
 background:linear-gradient(90deg,var(--accent),var(--cyan));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 .hero p{
-margin-top:20px;
-max-width:700px;
+max-width:800px;
+margin:20px auto;
 color:var(--muted);
 font-size:1.2rem;
 }
 .btn{
 display:inline-block;
-margin-top:30px;
-padding:14px 28px;
+margin:10px;
+padding:14px 26px;
 border-radius:14px;
 text-decoration:none;
 color:white;
 background:linear-gradient(90deg,var(--accent),var(--cyan));
-box-shadow:0 0 30px rgba(139,92,246,.3);
 }
 section{padding:100px 8%}
 .title{
-font-size:2.6rem;
+font-size:2.8rem;
 margin-bottom:30px;
 }
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
 .card{
 background:var(--card);
-border:1px solid #232332;
-padding:24px;
-border-radius:18px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.08);
+padding:25px;
+border-radius:20px;
 transition:.3s;
 }
 .card:hover{
-transform:translateY(-8px);
-border-color:var(--accent);
-box-shadow:0 0 35px rgba(139,92,246,.18);
+transform:translateY(-6px);
 }
-.card h3{margin-bottom:12px}
-.card p{color:var(--muted)}
 .stats{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
 .stat{
 background:var(--card);
 padding:30px;
-border-radius:18px;
+border-radius:20px;
 text-align:center;
 }
 .number{
@@ -108,152 +116,118 @@ font-size:3rem;
 font-weight:800;
 color:var(--cyan);
 }
-.portfolio{
+.timeline{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:20px;
 }
-.shot{
-height:220px;
+.step{
+background:var(--card);
+padding:20px;
 border-radius:18px;
-background:linear-gradient(135deg,#161625,#252547);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:1.2rem;
-color:#d4d4d8;
-border:1px solid #2a2a3f;
+border-left:4px solid var(--accent);
 }
 footer{
-padding:50px;
+padding:40px;
 text-align:center;
 color:var(--muted);
-border-top:1px solid #222;
-}
-.reveal{
-opacity:0;
-transform:translateY(30px);
-transition:.8s;
-}
-.reveal.show{
-opacity:1;
-transform:none;
+border-top:1px solid rgba(255,255,255,.08);
 }
 </style>
 </head>
 <body>
-<div id="particles"></div>
+
+<div class="bg"></div>
 
 <nav>
 <div class="logo">ONYX STUDIO</div>
-<div>Founded by vSmaugv</div>
+<div class="links">
+<a href="#services">Servicios</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contacto</a>
+</div>
 </nav>
 
 <section class="hero">
 <div>
+<div style="margin-bottom:20px;color:#22d3ee;">⚡ Premium Minecraft Development</div>
 <h1>ONYX STUDIO</h1>
-<p>Desarrollo profesional de servidores Minecraft. Plugins, Mods, FancyMenu, MythicMobs, RPG, Texture Packs y sistemas personalizados diseñados para crear experiencias únicas.</p>
-<a class="btn" href="#services">Explorar Portfolio</a>
+<p>Configuraciones profesionales de servidores Minecraft. MythicMobs, DeluxeMenus, FancyMenu, Texture Packs, RPG, Mods, Cinematic View y sistemas completamente personalizados.</p>
+<a class="btn" href="#portfolio">Ver Portfolio</a>
+<a class="btn" href="#contact">Contactar</a>
 </div>
-  
 </section>
-  
-<section class="reveal" id="services">
+
+<section id="services">
 <h2 class="title">Servicios</h2>
 <div class="grid">
-<div class="card"><h3>⚔️ MythicMobs</h3><p>Bosses, fases, habilidades y eventos épicos.</p></div>
-<div class="card"><h3>💎 Economía</h3><p>Monedas, progresión, tiendas y recompensas.</p></div>
-<div class="card"><h3>📦 Crates</h3><p>Crates premium con rarezas personalizadas.</p></div>
-<div class="card"><h3>🎨 Texture Packs</h3><p>Sonidos, texturas e identidad visual.</p></div>
-<div class="card"><h3>🖥️ DeluxeMenus</h3><p>Interfaces profesionales y dinámicas.</p></div>
-<div class="card"><h3>✨ FancyMenu</h3><p>Menús interactivos, pantallas personalizadas y experiencias visuales premium.</p></div>
-<div class="card"><h3>🎮 Mods & Modpacks</h3><p>Configuración, integración y optimización de mods y modpacks.</p></div>
-<div class="card"><h3>🚀 Optimización</h3><p>Rendimiento y estabilidad para servidores.</p></div>
+<div class="card">⚔️ MythicMobs</div>
+<div class="card">✨ FancyMenu</div>
+<div class="card">🖥️ DeluxeMenus</div>
+<div class="card">🎨 Texture Packs</div>
+<div class="card">🎬 Cinematic View</div>
+<div class="card">💎 Economía</div>
+<div class="card">🎮 Mods & Modpacks</div>
+<div class="card">🚀 Optimización</div>
 </div>
 </section>
 
-<section class="reveal">
+<section>
 <h2 class="title">Estadísticas</h2>
 <div class="stats">
-<div class="stat"><div class="number" data-target="25">0</div><p>Plugins Configurados</p></div>
-<div class="stat"><div class="number" data-target="10">0</div><p>Sistemas RPG</p></div>
-<div class="stat"><div class="number" data-target="100">0</div><p>Horas de Desarrollo</p></div>
-<div class="stat"><div class="number" data-target="50">0</div><p>Configuraciones Custom</p></div>
+<div class="stat"><div class="number">25+</div><p>Plugins Configurados</p></div>
+<div class="stat"><div class="number">10+</div><p>Sistemas RPG</p></div>
+<div class="stat"><div class="number">100+</div><p>Horas de Desarrollo</p></div>
+<div class="stat"><div class="number">50+</div><p>Configs Custom</p></div>
 </div>
 </section>
 
-<section class="reveal">
+<section id="portfolio">
 <h2 class="title">Portfolio</h2>
-<div class="portfolio">
-<div class="shot">📸 Captura de Bosses</div>
-<div class="shot">📸 Menús DeluxeMenus</div>
-<div class="shot">📸 Crates Premium</div>
-<div class="shot">📸 Minas Custom</div>
-<div class="shot">📸 Texture Packs</div>
-<div class="shot">📸 Eventos RPG</div>
+<div class="grid">
+<div class="card">Bosses Personalizados</div>
+<div class="card">Crates Premium</div>
+<div class="card">Minas Custom</div>
+<div class="card">Texture Packs</div>
+<div class="card">Cinemáticas</div>
+<div class="card">Eventos RPG</div>
 </div>
 </section>
 
-<section class="reveal">
+<section>
+<h2 class="title">Proceso de Trabajo</h2>
+<div class="timeline">
+<div class="step"><h3>1. Planificación</h3><p>Diseño del sistema.</p></div>
+<div class="step"><h3>2. Desarrollo</h3><p>Configuración y creación.</p></div>
+<div class="step"><h3>3. Pruebas</h3><p>Optimización y corrección.</p></div>
+<div class="step"><h3>4. Entrega</h3><p>Servidor listo.</p></div>
+</div>
+</section>
+
+<section id="faq">
+<h2 class="title">Preguntas Frecuentes</h2>
+<div class="grid">
+<div class="card"><h3>¿Haces servidores completos?</h3><p>Sí.</p></div>
+<div class="card"><h3>¿Realizas cinemáticas?</h3><p>Sí, con Cinematic View.</p></div>
+<div class="card"><h3>¿Trabajas Texture Packs?</h3><p>Sí, completos y personalizados.</p></div>
+</div>
+</section>
+
+<section id="contact">
 <h2 class="title">Contacto</h2>
-
-<div style="display:grid;gap:20px;max-width:700px;">
-
-  <div class="card">
-    <h3>💬 Discord Personal</h3>
-    <p style="color:#a1a1aa;margin-top:10px;">
-      Podés contactarme directamente en Discord:
-    </p>
-
-    <a href="https://discord.com/users/1045744008095350856"
-       target="_blank"
-       style="
-       display:inline-block;
-       margin-top:12px;
-       padding:10px 16px;
-       border-radius:12px;
-       background:linear-gradient(90deg,#8b5cf6,#22d3ee);
-       color:white;
-       text-decoration:none;
-       font-weight:700;
-       box-shadow:0 0 20px rgba(139,92,246,.25);">
-       @vSmaugv
-    </a>
-  </div>
-
-  <div class="card">
-    <h3>🌐 Servidor ONYX</h3>
-    <p style="color:#a1a1aa;margin-top:10px;">
-      Únete al servidor oficial:
-    </p>
-
-    <a href="https://discord.gg/YRRe9x7mjy"
-       target="_blank"
-       style="
-       display:inline-block;
-       margin-top:12px;
-       padding:10px 16px;
-       border-radius:12px;
-       background:linear-gradient(90deg,#8b5cf6,#22d3ee);
-       color:white;
-       text-decoration:none;
-       font-weight:700;
-       box-shadow:0 0 20px rgba(139,92,246,.25);">
-       discord.gg/YRRe9x7mjy
-    </a>
-  </div>
-
-  <div class="card">
-    <h3>🖥️ Dominio</h3>
-    <p style="color:#a1a1aa;margin-top:10px;">
-      Sitio oficial del proyecto:
-    </p>
-
-    <p style="margin-top:12px;font-weight:700;color:#22d3ee;">
-      onyxserver.org
-    </p>
-  </div>
-
+<div class="grid">
+<div class="card">
+<h3>Discord Personal</h3>
+<p>@vSmaugv</p>
+</div>
+<div class="card">
+<h3>Servidor ONYX</h3>
+<p>discord.gg/YRRe9x7mjy</p>
+</div>
+<div class="card">
+<h3>Dominio</h3>
+<p>onyxserver.org</p>
+</div>
 </div>
 </section>
 
@@ -261,25 +235,5 @@ transform:none;
 ONYX Studio © 2026 | Powered by vSmaugv
 </footer>
 
-<script>
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{
-if(e.isIntersecting)e.target.classList.add('show');
-});
-});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-document.querySelectorAll('.number').forEach(el=>{
-const target=+el.dataset.target;
-let n=0;
-const tick=()=>{
-n+=Math.ceil(target/50);
-if(n>target)n=target;
-el.textContent=n+"+";
-if(n<target)requestAnimationFrame(tick);
-};
-setTimeout(tick,600);
-});
-</script>
 </body>
 </html>
