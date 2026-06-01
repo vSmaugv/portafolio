@@ -6,6 +6,38 @@
 <title>ONYX Studio | vSmaugv</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
+  .discord-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:30px;
+text-decoration:none;
+background:linear-gradient(135deg,#5865F2,#7289DA);
+box-shadow:0 0 25px rgba(88,101,242,.5);
+z-index:9999;
+transition:.3s;
+animation:bounce 2s infinite;
+}
+
+.discord-float:hover{
+transform:scale(1.1);
+box-shadow:0 0 40px rgba(88,101,242,.8);
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
 :root{
 --bg:#07070a;
 --card:rgba(17,17,24,.75);
@@ -102,7 +134,10 @@ transition:.3s;
 }
 .card:hover{
 transform:translateY(-8px) scale(1.02);
-box-shadow:0 0 30px rgba(139,92,246,.25);
+border-color:rgba(139,92,246,.4);
+box-shadow:
+0 0 25px rgba(139,92,246,.15),
+0 0 40px rgba(34,211,238,.08);
 }
 .stats{
 display:grid;
@@ -375,6 +410,10 @@ Sistemas únicos adaptados a tu servidor.
 <footer>
 ONYX Studio © 2026 | Powered by vSmaugv
 </footer>
+  
+  <a href="https://discord.gg/YRRe9x7mjy" class="discord-float" target="_blank">
+💬
+</a>
 
 </body>
 </html>
