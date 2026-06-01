@@ -58,6 +58,8 @@ align-items:center;
 justify-content:center;
 text-align:center;
 padding:0 20px;
+position:relative;
+overflow:hidden;
 }
 .hero h1{
 font-size:clamp(4rem,10vw,8rem);
@@ -99,7 +101,8 @@ border-radius:20px;
 transition:.3s;
 }
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 0 30px rgba(139,92,246,.25);
 }
 .stats{
 display:grid;
@@ -133,7 +136,7 @@ text-align:center;
 color:var(--muted);
 border-top:1px solid rgba(255,255,255,.08);
 }
-</style>
+
   .particles{
 position:fixed;
 inset:0;
@@ -204,6 +207,7 @@ transform:scale(1);
 transform:scale(1.2);
 }
 }
+</style>
 </head>
 <body>
 
@@ -303,7 +307,7 @@ transform:scale(1.2);
 
 <div class="card">
 <h3>⚙️ Configuración Básica</h3>
-<h1>$5 USD</h1>
+<h1 style="color:#22d3ee;">$5 USD</h1>
 <p>
 Configuración simple de plugins, permisos y ajustes generales.
 </p>
@@ -313,7 +317,7 @@ Configuración simple de plugins, permisos y ajustes generales.
 
 <div class="card">
 <h3>✨ Menús & Economía</h3>
-<h1>$10 USD</h1>
+<h1 style="color:#22d3ee;">$10 USD</h1>
 <p>
 DeluxeMenus, tiendas, economía, rangos y recompensas.
 </p>
@@ -323,7 +327,7 @@ DeluxeMenus, tiendas, economía, rangos y recompensas.
 
 <div class="card">
 <h3>⚔️ MythicMobs & RPG</h3>
-<h1>$15 USD</h1>
+<h1 style="color:#22d3ee;">$15 USD</h1>
 <p>
 Mobs personalizados, habilidades, bosses y sistemas RPG.
 </p>
@@ -333,7 +337,7 @@ Mobs personalizados, habilidades, bosses y sistemas RPG.
 
 <div class="card">
 <h3>💎 Proyecto Personalizado</h3>
-<h1>Desde $20 USD</h1>
+<h1 style="color:#22d3ee;">$20 USD</h1>
 <p>
 Sistemas únicos adaptados a tu servidor.
 </p>
