@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONYX Studio | vSmaugv</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  .discord-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:30px;
+text-decoration:none;
+background:linear-gradient(135deg,#5865F2,#7289DA);
+box-shadow:0 0 25px rgba(88,101,242,.5);
+z-index:9999;
+transition:.3s;
+animation:bounce 2s infinite;
+}
+
+.discord-float:hover{
+transform:scale(1.1);
+box-shadow:0 0 40px rgba(88,101,242,.8);
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
+:root{
+--bg:#07070a;
+--card:rgba(17,17,24,.75);
+--accent:#8b5cf6;
+--cyan:#22d3ee;
+--text:#f4f4f5;
+--muted:#a1a1aa;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:Inter,sans-serif;
+background:#07070a;
+color:var(--text);
+overflow-x:hidden;
+}
+.bg{
+position:fixed;
+inset:0;
+z-index:-3;
+background:
+radial-gradient(circle at 20% 20%,rgba(139,92,246,.25),transparent 25%),
+radial-gradient(circle at 80% 30%,rgba(34,211,238,.15),transparent 25%),
+#07070a;
+overflow:hidden;
+}
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+.logo{
+font-weight:800;
+letter-spacing:3px;
+color:white;
+text-shadow:
+0 0 10px rgba(139,92,246,.8),
+0 0 25px rgba(34,211,238,.5),
+0 0 40px rgba(34,211,238,.3);
+animation:glow 4s ease-in-out infinite;
+}
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 20px;
+position:relative;
+overflow:hidden;
+}
+.hero h1{
+font-size:clamp(4rem,10vw,8rem);
+background:linear-gradient(90deg,var(--accent),var(--cyan));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.hero p{
+max-width:800px;
+margin:20px auto;
+color:var(--muted);
+font-size:1.2rem;
+}
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 26px;
+border-radius:14px;
+text-decoration:none;
+color:white;
+background:linear-gradient(90deg,var(--accent),var(--cyan));
+}
+section{padding:100px 8%}
+.title{
+font-size:2.8rem;
+margin-bottom:30px;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+.card{
+background:var(--card);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.08);
+padding:25px;
+border-radius:20px;
+transition:.3s;
+}
+.card:hover{
+transform:translateY(-8px) scale(1.02);
+border-color:rgba(139,92,246,.4);
+box-shadow:
+0 0 25px rgba(139,92,246,.15),
+0 0 40px rgba(34,211,238,.08);
+}
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+.stat{
+background:var(--card);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+.number{
+font-size:3rem;
+font-weight:800;
+color:var(--cyan);
+}
+.timeline{
+display:grid;
+gap:20px;
+}
+.step{
+background:var(--card);
+padding:20px;
+border-radius:18px;
+border-left:4px solid var(--accent);
+}
+footer{
+padding:40px;
+text-align:center;
+color:var(--muted);
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+  .particles{
+position:fixed;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+z-index:-2;
+}
+
+.particles span{
+position:absolute;
+display:block;
+width:4px;
+height:4px;
+border-radius:50%;
+background:rgba(34,211,238,.5);
+box-shadow:0 0 12px rgba(34,211,238,.8);
+animation:float linear infinite;
+}
+
+.particles span:nth-child(1){left:5%;animation-duration:16s;animation-delay:0s;}
+.particles span:nth-child(2){left:15%;animation-duration:18s;animation-delay:2s;}
+.particles span:nth-child(3){left:25%;animation-duration:14s;animation-delay:5s;}
+.particles span:nth-child(4){left:35%;animation-duration:20s;animation-delay:1s;}
+.particles span:nth-child(5){left:45%;animation-duration:17s;animation-delay:7s;}
+.particles span:nth-child(6){left:55%;animation-duration:15s;animation-delay:3s;}
+.particles span:nth-child(7){left:65%;animation-duration:21s;animation-delay:6s;}
+.particles span:nth-child(8){left:75%;animation-duration:19s;animation-delay:4s;}
+.particles span:nth-child(9){left:85%;animation-duration:16s;animation-delay:8s;}
+.particles span:nth-child(10){left:95%;animation-duration:22s;animation-delay:10s;}
+
+@keyframes float{
+0%{
+transform:translateY(105vh) scale(0);
+opacity:0;
+}
+10%{
+opacity:1;
+}
+90%{
+opacity:1;
+}
+100%{
+transform:translateY(-10vh) scale(2);
+opacity:0;
+}
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:700px;
+height:700px;
+background:
+radial-gradient(circle,
+rgba(139,92,246,.20),
+rgba(34,211,238,.12),
+transparent 70%);
+filter:blur(100px);
+animation:pulse 10s ease-in-out infinite;
+z-index:-1;
+}
+
+@keyframes pulse{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.2);
+}
+}
+
+@keyframes glow{
+0%,100%{
+text-shadow:
+0 0 10px rgba(139,92,246,.8),
+0 0 25px rgba(34,211,238,.5),
+0 0 40px rgba(34,211,238,.3);
+}
+50%{
+text-shadow:
+0 0 20px rgba(139,92,246,1),
+0 0 40px rgba(34,211,238,.8),
+0 0 60px rgba(34,211,238,.5);
+}
+}
+  
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="particles">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+  
+<nav>
+<div class="links">
+<a href="#services">Servicios</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#cinematica">Cinemática</a>
+<a href="#faq">FAQ</a>
+<a href="#pricing">Precios</a>
+<a href="#contact">Contacto</a>
+<a href="https://discord.gg/YRRe9x7mjy" target="_blank">Discord</a>
+</div>
+</nav>
+
+<section class="hero">
+<div>
+<div style="margin-bottom:20px;color:#22d3ee;">⚡ Premium Minecraft Development</div>
+<h1>ONYX STUDIO</h1>
+<p>Configuraciones profesionales de servidores Minecraft. MythicMobs, DeluxeMenus, FancyMenu, Texture Packs, RPG, Mods, Cinematic View y sistemas completamente personalizados.</p>
+<a class="btn" href="#portfolio">Ver Portfolio</a>
+<a class="btn" href="#contact">Contactar</a>
+</div>
+</section>
+
+<section id="services">
+<h2 class="title">Servicios</h2>
+<div class="grid">
+<div class="card">⚔️ MythicMobs</div>
+<div class="card">✨ FancyMenu</div>
+<div class="card">🖥️ DeluxeMenus</div>
+<div class="card">🎨 Texture Packs</div>
+<div class="card">
+<img src="dungeon-cinematic.jpg" style="width:100%;border-radius:12px;margin-bottom:15px;">
+<h3>Dungeon Cinematic</h3>
+<p>Cinemática personalizada para presentar una dungeon temática del Nether.</p>
+</div>
+<div class="card">💎 Economía</div>
+<div class="card">🎮 Mods & Modpacks</div>
+<div class="card">🚀 Optimización</div>
+</div>
+</section>
+
+<section>
+<h2 class="title">Estadísticas</h2>
+<div class="stats">
+<div class="stat"><div class="number">25+</div><p>Plugins Configurados</p></div>
+<div class="stat"><div class="number">10+</div><p>Sistemas RPG</p></div>
+<div class="stat"><div class="number">100+</div><p>Horas de Desarrollo</p></div>
+<div class="stat"><div class="number">50+</div><p>Configs Custom</p></div>
+</div>
+</section>
+
+<section id="portfolio">
+<h2 class="title">Portfolio</h2>
+<div class="grid">
+<div class="card">Bosses Personalizados</div>
+<div class="card">Crates Premium</div>
+<div class="card">Minas Custom</div>
+<div class="card">Texture Packs</div>
+<div class="card">Cinemáticas</div>
+<div class="card">Eventos RPG</div>
+</div>
+</section>
+
+<section id="cinematica">
+<h2 class="title">🎬 Cinemática Destacada</h2>
+
+<div class="card">
+
+<iframe
+width="100%"
+height="600"
+src="https://www.youtube.com/embed/8EwPKXQkND4"
+title="ONYX Studio Cinematic"
+frameborder="0"
+allowfullscreen
+style="
+border-radius:20px;
+width:100%;
+min-height:600px;
+">
+</iframe>
+
+<h3 style="margin-top:20px;">
+🔥 Nether Dungeon Cinematic
+</h3>
+
+<p>
+Presentación cinematográfica creada para mostrar una dungeon temática del Nether,
+con ambientación inmersiva, iluminación dinámica y tomas cinematográficas.
+</p>
+
+</div>
+</section>
+
+<section>
+<h2 class="title">Proceso de Trabajo</h2>
+<div class="timeline">
+<div class="step"><h3>1. Planificación</h3><p>Diseño del sistema.</p></div>
+<div class="step"><h3>2. Desarrollo</h3><p>Configuración y creación.</p></div>
+<div class="step"><h3>3. Pruebas</h3><p>Optimización y corrección.</p></div>
+<div class="step"><h3>4. Entrega</h3><p>Servidor listo.</p></div>
+</div>
+</section>
+
+<section id="faq">
+<h2 class="title">Preguntas Frecuentes</h2>
+<div class="grid">
+<div class="card"><h3>¿Haces servidores completos?</h3><p>Sí.</p></div>
+<div class="card"><h3>¿Realizas cinemáticas?</h3><p>Sí, con Cinematic View.</p></div>
+<div class="card"><h3>¿Trabajas Texture Packs?</h3><p>Sí, completos y personalizados.</p></div>
+</div>
+</section>
+
+<section id="pricing">
+<h2 class="title">Precios</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>⚙️ Configuración Básica</h3>
+<h1 style="color:#22d3ee;">$5 USD</h1>
+<p>
+Configuración simple de plugins, permisos y ajustes generales.
+</p>
+<br>
+<a class="btn" href="#contact">Comprar</a>
+</div>
+
+<div class="card">
+<h3>✨ Menús & Economía</h3>
+<h1 style="color:#22d3ee;">$10 USD</h1>
+<p>
+DeluxeMenus, tiendas, economía, rangos y recompensas.
+</p>
+<br>
+<a class="btn" href="#contact">Comprar</a>
+</div>
+
+<div class="card">
+<h3>⚔️ MythicMobs & RPG</h3>
+<h1 style="color:#22d3ee;">$15 USD</h1>
+<p>
+Mobs personalizados, habilidades, bosses y sistemas RPG.
+</p>
+<br>
+<a class="btn" href="#contact">Comprar</a>
+</div>
+
+<div class="card">
+<h3>💎 Proyecto Personalizado</h3>
+<h1 style="color:#22d3ee;">$20 USD</h1>
+<p>
+Sistemas únicos adaptados a tu servidor.
+</p>
+<br>
+<a class="btn" href="#contact">Comprar</a>
+</div>
+
+</div>
+
+<p style="text-align:center;margin-top:30px;color:#a1a1aa;">
+📌 Todos los trabajos son personalizados. Para comprar o solicitar un presupuesto, contactame por Discord: <strong>@vSmaugv</strong>.
+</p>
+
+</section>
+  
+
+<section id="contact">
+<h2 class="title">Contacto</h2>
+<div class="grid">
+
+<a href="https://discord.gg/YRRe9x7mjy" target="_blank" class="card" style="text-decoration:none;color:white;">
+<h3>💬 Discord ONYX</h3>
+<p>Únete a la comunidad y solicita tu presupuesto.</p>
+</a>
+
+<a href="https://discord.com/users/1045744008095350856" target="_blank" class="card" style="text-decoration:none;color:white;">
+<h3>👤 Contacto Directo</h3>
+<p>@vSmaugv</p>
+<p>Consultas y proyectos personalizados.</p>
+</a>
+
+<a href="https://onyxserver.org" target="_blank" class="card" style="text-decoration:none;color:white;">
+<h3>🌐 Sitio Oficial</h3>
+<p>Visitar ONYX Server</p>
+</a>
+
+</div>
+</section>
+
+
+<footer>
+ONYX Studio © 2026 | Powered by vSmaugv
+</footer>
+  
+  <a href="https://discord.gg/YRRe9x7mjy" class="discord-float" target="_blank">
+💬
+</a>
+
+</body>
+</html>
